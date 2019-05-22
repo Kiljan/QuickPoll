@@ -5,20 +5,33 @@ Great for rest testing
 https://insomnia.rest/
 
 
+application/json
+
+{
+"question": "Who will win SuperBowl this year?",
+"options": [
+{"value": "New England Patriots"},
+{"value": "Seattle Seahawks"},
+{"value": "Green Bay Packers"},
+{"value": "Denver Broncos"}]
+}
+
+
+
 CREATE DATABASE pollApp
 
 -- main table
 CREATE TABLE `polls` (
-  `POLL_ID` DECIMAL NOT NULL,
+  `POLL_ID` int(11) NOT NULL AUTO_INCREMENT,
   `QUESTION` varchar(500) NOT NULL,
   PRIMARY KEY (`POLL_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- options for main table
 CREATE TABLE `opt` (
-  `OPTION_ID` DECIMAL NOT NULL,
+  `OPTION_ID` int(11) NOT NULL AUTO_INCREMENT,
   `OPTION_VALUE` varchar(500) NOT NULL,
-  `POLL_ID` DECIMAL NOT NULL,
+  `POLL_ID` int(11) NOT NULL,
   PRIMARY KEY (`OPTION_ID`),
   KEY `POLL_ID` (`POLL_ID`),
   CONSTRAINT `polls_ibfk_1` FOREIGN KEY (`POLL_ID`) REFERENCES `polls` (`POLL_ID`)
@@ -26,8 +39,8 @@ CREATE TABLE `opt` (
 
 -- vote for tables
 CREATE TABLE `vot` (
-  `VOTE_ID` DECIMAL NOT NULL,
-  `OPTION_ID` DECIMAL NOT NULL,
+  `VOTE_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `OPTION_ID` int(11) NOT NULL,
   PRIMARY KEY (`VOTE_ID`),
   KEY `OPTION_ID` (`OPTION_ID`),
   CONSTRAINT `option_ibfk_1` FOREIGN KEY (`OPTION_ID`) REFERENCES `opt` (`OPTION_ID`)
