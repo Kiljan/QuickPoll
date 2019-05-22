@@ -1,6 +1,10 @@
 # QuickPoll
 
 
+Great for rest testing 
+https://insomnia.rest/
+
+
 CREATE DATABASE pollApp
 
 -- main table
