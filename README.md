@@ -3,26 +3,30 @@
 
 CREATE DATABASE pollApp
 
-
+-- main table
 CREATE TABLE `polls` (
   `POLL_ID` DECIMAL NOT NULL,
   `QUESTION` varchar(500) NOT NULL,
   PRIMARY KEY (`POLL_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+-- options for main table
 CREATE TABLE `opt` (
   `OPTION_ID` DECIMAL NOT NULL,
   `OPTION_VALUE` varchar(500) NOT NULL,
   `POLL_ID` DECIMAL NOT NULL,
-  PRIMARY KEY (`OPTION_ID`)
+  PRIMARY KEY (`OPTION_ID`),
+  KEY `POLL_ID` (`POLL_ID`),
+  CONSTRAINT `polls_ibfk_1` FOREIGN KEY (`POLL_ID`) REFERENCES `polls` (`POLL_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+-- vote for tables
 CREATE TABLE `vot` (
   `VOTE_ID` DECIMAL NOT NULL,
-  `OPTION_ID` varchar(500) NOT NULL,
-  PRIMARY KEY (`VOTE_ID`)
+  `OPTION_ID` DECIMAL NOT NULL,
+  PRIMARY KEY (`VOTE_ID`),
+  KEY `OPTION_ID` (`OPTION_ID`),
+  CONSTRAINT `option_ibfk_1` FOREIGN KEY (`OPTION_ID`) REFERENCES `opt` (`OPTION_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -37,10 +41,11 @@ INSERT INTO polls VALUES(1, 'Sience is great?')
 INSERT INTO polls VALUES(2, 'Spring is great?')
 
 INSERT INTO opt VALUES(1, 'Yes', 1)
+INSERT INTO opt VALUES(2, 'No', 1)
 
 
 
---testy dla join
+-- tests for join
 
 CREATE TABLE `Cart` (
   `cart_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
