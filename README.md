@@ -16,7 +16,7 @@ application/json
 {"value": "Denver Broncos"}]
 }
 
-
+===========================================================================================================
 
 CREATE DATABASE pollApp
 
@@ -34,7 +34,7 @@ CREATE TABLE `opt` (
   `POLL_ID` int(11) NOT NULL,
   PRIMARY KEY (`OPTION_ID`),
   KEY `POLL_ID` (`POLL_ID`),
-  CONSTRAINT `polls_ibfk_1` FOREIGN KEY (`POLL_ID`) REFERENCES `polls` (`POLL_ID`)
+  CONSTRAINT `polls_ibfk_1` FOREIGN KEY (`POLL_ID`) REFERENCES `polls` (`POLL_ID`) on delete cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- vote for tables
@@ -43,7 +43,7 @@ CREATE TABLE `vot` (
   `OPTION_ID` int(11) NOT NULL,
   PRIMARY KEY (`VOTE_ID`),
   KEY `OPTION_ID` (`OPTION_ID`),
-  CONSTRAINT `option_ibfk_1` FOREIGN KEY (`OPTION_ID`) REFERENCES `opt` (`OPTION_ID`)
+  CONSTRAINT `option_ibfk_1` FOREIGN KEY (`OPTION_ID`) REFERENCES `opt` (`OPTION_ID`) on delete cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -81,3 +81,5 @@ CREATE TABLE `Items` (
 SELECT * FROM Cart
 
 SELECT * FROM Items
+
+
