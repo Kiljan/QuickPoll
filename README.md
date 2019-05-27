@@ -54,7 +54,7 @@ http://localhost:8080/PollApp/polls/1/votes ==> POST
 
 CREATE DATABASE pollApp
 
-Main table  
+Poll table  
 ----------------------------------------------------------------------------- 
 CREATE TABLE `polls` (
   `POLL_ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -62,7 +62,7 @@ CREATE TABLE `polls` (
   PRIMARY KEY (`POLL_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-Options for main table 
+Options table 
 -----------------------------------------------------------------------------   
 CREATE TABLE `opt` (
   `OPTION_ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -73,7 +73,7 @@ CREATE TABLE `opt` (
   CONSTRAINT `polls_ibfk_1` FOREIGN KEY (`POLL_ID`) REFERENCES `polls` (`POLL_ID`) on delete cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-Vote for tables   
+Vote table  
 -----------------------------------------------------------------------------
 CREATE TABLE `vot` (
   `VOTE_ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -91,7 +91,8 @@ SELECT * FROM opt
 SELECT * FROM vot  
 
 
--- tests for join  
+Tests for join  
+-----------------------------------------------------------------------------
 
 CREATE TABLE `Cart` (
   `cart_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
