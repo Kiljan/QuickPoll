@@ -27,7 +27,7 @@ CREATE TABLE `polls` (
   PRIMARY KEY (`POLL_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- options for main table
+-- options for main table  
 CREATE TABLE `opt` (
   `OPTION_ID` int(11) NOT NULL AUTO_INCREMENT,
   `OPTION_VALUE` varchar(500) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE `opt` (
   CONSTRAINT `polls_ibfk_1` FOREIGN KEY (`POLL_ID`) REFERENCES `polls` (`POLL_ID`) on delete cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- vote for tables
+-- vote for tables  
 CREATE TABLE `vot` (
   `VOTE_ID` int(11) NOT NULL AUTO_INCREMENT,
   `OPTION_ID` int(11) NOT NULL,
@@ -47,11 +47,11 @@ CREATE TABLE `vot` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-SELECT * FROM polls
+SELECT * FROM polls  
 
-SELECT * FROM opt
+SELECT * FROM opt  
 
-SELECT * FROM vot
+SELECT * FROM vot  
 
 
 INSERT INTO polls VALUES(1, 'Sience is great?')
@@ -62,7 +62,7 @@ INSERT INTO opt VALUES(2, 'No', 1)
 
 
 
--- tests for join
+-- tests for join  
 
 CREATE TABLE `Cart` (
   `cart_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -78,8 +78,8 @@ CREATE TABLE `Items` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 
-SELECT * FROM Cart
+SELECT * FROM Cart  
 
-SELECT * FROM Items
+SELECT * FROM Items  
 
 
