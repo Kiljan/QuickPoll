@@ -20,7 +20,7 @@ application/json
 
 CREATE DATABASE pollApp
 
--- main table
+-- main table  
 CREATE TABLE `polls` (
   `POLL_ID` int(11) NOT NULL AUTO_INCREMENT,
   `QUESTION` varchar(500) NOT NULL,
