@@ -5,7 +5,7 @@ Great for rest testing
 https://insomnia.rest/
 
 Always set header to = application/json
-=============================================================================
+=============================================================================   
 
 For creating a Poll 
 http://localhost:8080/PollApp/polls ==> POST
@@ -19,7 +19,8 @@ http://localhost:8080/PollApp/polls ==> POST
 {"value": "Denver Broncos"}]
 }
 
-=============================================================================
+=============================================================================  
+
 For update Pull  
 http://localhost:8080/PollApp/polls/2 ==> PUT
 
@@ -34,7 +35,8 @@ http://localhost:8080/PollApp/polls/2 ==> PUT
 }
 
 
-=============================================================================
+=============================================================================   
+
 For sending a Vote to Poll with id=1 
 http://localhost:8080/PollApp/polls/1/votes ==> POST
 
@@ -44,7 +46,8 @@ http://localhost:8080/PollApp/polls/1/votes ==> POST
 	}
 }
 
-=============================================================================
+=============================================================================   
+
 CREATE DATABASE pollApp
 
 -- main table  
