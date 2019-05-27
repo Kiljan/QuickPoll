@@ -4,8 +4,11 @@
 Great for rest testing 
 https://insomnia.rest/
 
+Always set header to = application/json
+=============================================================================
 
-application/json
+For creating a Poll 
+http://localhost:8080/PollApp/polls ==> POST
 
 {
 "question": "Who will win SuperBowl this year?",
@@ -16,8 +19,32 @@ application/json
 {"value": "Denver Broncos"}]
 }
 
-============================================================================
+=============================================================================
+For update Pull  
+http://localhost:8080/PollApp/polls/2 ==> PUT
 
+{
+"id" : "2",
+"question": "Who will losse SuperBowl 2015?",
+"options": [
+{"value": "New England Patriots"},
+{"value": "Seattle Seahawks"},
+{"value": "Green Bay Packers"},
+{"value": "Denver Broncos"}]
+}
+
+
+=============================================================================
+For sending a Vote to Poll with id=1 
+http://localhost:8080/PollApp/polls/1/votes ==> POST
+
+{
+	"option": {
+		"id" : "1", "value" : "New England Patriots"
+	}
+}
+
+=============================================================================
 CREATE DATABASE pollApp
 
 -- main table  
