@@ -7,8 +7,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+/*
+ * Problem with votes:
+ * failed to lazily initialize a collection of role
+ * 
+ * Solution:
+ * add @JsonIgnore to the field in Child (Vote) class which refers to the Parent entity (Option),
+ * */
+
 
 @Entity
+@Table(name = "vot")
 public class Vote {
 
 	@Id
@@ -19,6 +32,7 @@ public class Vote {
 	/*#This fom Option*/
 	@ManyToOne
 	@JoinColumn(name = "OPTION_ID")
+	@JsonIgnore
 	private Option option;
 
 	public long getId() {
