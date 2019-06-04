@@ -12,7 +12,19 @@ Always set header to = application/json
 ===========================================================
 -----------------------------------------------------------
 
+
+For get all polls 
+-----------------------------------------------------------
+http://localhost:8080/PollApp/polls ==> GET
+
+
+For get all votes from poll option 
+-----------------------------------------------------------
+http://localhost:8080/PollApp/computeresult?pollId=1 ==> GET
+
+
 For creating a Poll 
+-----------------------------------------------------------
 http://localhost:8080/PollApp/polls ==> POST
 
 {
@@ -24,10 +36,9 @@ http://localhost:8080/PollApp/polls ==> POST
 {"value": "Denver Broncos"}]
 }
 
-===========================================================
------------------------------------------------------------  
 
 For update Pull  
+-----------------------------------------------------------
 http://localhost:8080/PollApp/polls/2 ==> PUT
 
 {
@@ -41,10 +52,8 @@ http://localhost:8080/PollApp/polls/2 ==> PUT
 }
 
 
-===========================================================
------------------------------------------------------------   
-
 For sending a Vote to Poll with id=1 
+-----------------------------------------------------------
 http://localhost:8080/PollApp/polls/1/votes ==> POST
 
 {
