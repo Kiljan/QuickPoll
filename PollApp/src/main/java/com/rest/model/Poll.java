@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "polls")
@@ -19,10 +22,13 @@ public class Poll {
 	@Column(name = "POLL_ID")
 	private long id;
 	
+	
 	@Column(name = "QUESTION")
+	@NotEmpty
 	private String question;
 	
 	/*One Poll with many Options, mappedBy = "poll" is name of Poll Object in Option calss. I tag it in Class Option as #This*/
+	@Size(min=2, max=6)
 	@OneToMany(mappedBy = "poll")
 	private Set<Option> options;
 	

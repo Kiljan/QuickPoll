@@ -98,6 +98,14 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.5.2</version>
 		</dependency>
+		
+		<!-- For page validation -->
+		<dependency>
+    		<groupId>org.hibernate.validator</groupId>
+    		<artifactId>hibernate-validator</artifactId>
+    		<version>6.0.16.Final</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>PollApp</finalName>
