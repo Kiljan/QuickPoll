@@ -14,7 +14,7 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
-		<springVersion>4.3.23.RELEASE</springVersion>
+		<springVersion>5.2.20.RELEASE</springVersion>
 		<hibernateVersion>4.2.0.Final</hibernateVersion>
 		<springSecure>4.2.12.RELEASE</springSecure>
 	</properties>
